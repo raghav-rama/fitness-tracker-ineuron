@@ -14,11 +14,9 @@ import {
 import { Link } from "react-router-dom";
 import Context from "../context/landing/Context";
 
-
 const Landing = () => {
-
   const context = React.useContext(Context);
-  
+
   return (
     <React.Fragment>
       <AppBar position="static">
@@ -79,7 +77,69 @@ const Landing = () => {
           </Link>
         </Toolbar>
       </AppBar>
-      <Box sx={{ height: "100vh", widht: "100vw" }}></Box>
+      <Box
+        sx={{
+          position: "relative",
+          top: "-10%",
+          height: "100vh",
+          width: "100vw",
+          right: "0%",
+        }}
+      >
+        <Grid container spacing={2}>
+          <Grid item xs={3} />
+          <Grid item xs={6}>
+            <Paper elevation={3} sx={{ bgcolor: "cyan" }}>
+              <Typography
+                variant="h5"
+                component="h3"
+                sx={{ fontFamily: "Poppins, cursive", padding: 2, mt: 2 }}
+              >
+                Push your limits!
+              </Typography>
+            </Paper>
+          </Grid>
+          <Grid item xs={3} />
+          <Grid item xs={3} />
+          <Grid item xs={6}>
+            <Paper elevation={3} sx={{ bgcolor: "cyan" }}>
+              <Typography
+                variant="h5"
+                component="h3"
+                sx={{ fontFamily: "Poppins, cursive", padding: 2 }}
+              >
+                Turn the pain into power!
+              </Typography>
+            </Paper>
+          </Grid>
+          <Grid item xs={3} />
+          <Grid item xs={3} />
+          <Grid item xs={6}>
+            <Paper elevation={3} sx={{ bgcolor: "cyan" }}>
+              <Typography
+                variant="h5"
+                component="h3"
+                sx={{ fontFamily: "Poppins, cursive", padding: 2 }}
+              >
+                You don't find WILLPOWER, you CREATE it!
+              </Typography>
+            </Paper>
+          </Grid>
+          <Grid item xs={3} />
+          <Grid item xs={3} />
+          <Grid item xs={6}>
+            <Paper elevation={3} sx={{padding: 2}}>
+              <img
+                src={require("../img/girl1.png")}
+                alt="balaji"
+                height={316}
+                width={512}
+              />
+            </Paper>
+          </Grid>
+          <Grid item xs={3} />
+        </Grid>
+      </Box>
     </React.Fragment>
   );
 };

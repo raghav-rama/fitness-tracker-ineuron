@@ -45,10 +45,12 @@ app.post('/api/authenticate', async (req, res) => {
   const client = pgClient.connect();
   try {
     const queryText = 'SELECT * FROM user_info WHERE username = $1 AND password = $2';
-    const result = await pgClient.query(queryText, [username, password]);
-    if (result.rows.length === 0) {
-      return res.status(401).json({ message: 'Invalid credentials' });
-    }
+    const result = await pgClient.query(queryText, [username, password]).then(() => {
+      console.log("autheticated");
+    });
+    // if (result.rows.length === 0) {
+    //   return res.status(401).json({ message: 'Invalid credentials' });
+    // }
     // generate and return JWT
     const payload = { username };
     const token = jwt.sign(payload, keys.SECRET_KEY, { expresIn: '300s' }, (err, token) => {
